@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cqey5fbpktk7i"]
+
+[ext_resource type="Script" uid="uid://dl7pp4hw0ysxu" path="res://scripts/jugador.gd" id="1_jpodt"]
+[ext_resource type="Texture2D" uid="uid://bhv26qcicnlcb" path="res://sprites/icon.svg" id="1_tml57"]
+[ext_resource type="PackedScene" uid="uid://bn7wq3tar4ixd" path="res://escenas/bala.tscn" id="2_njcx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tml57"]
+size = Vector2(152, 131)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=909744321]
+script = ExtResource("1_jpodt")
+escena_bala = ExtResource("2_njcx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1155762869]
+texture = ExtResource("1_tml57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481096748]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_tml57")

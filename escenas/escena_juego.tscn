@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://plx1ifvbixya"]
+
+[ext_resource type="Script" uid="uid://b72mjd6k76enn" path="res://scripts/red_basica.gd" id="1_eirx7"]
+[ext_resource type="PackedScene" uid="uid://cqey5fbpktk7i" path="res://escenas/jugador.tscn" id="2_a4fla"]
+[ext_resource type="Script" uid="uid://d38oc8fyu5cv5" path="res://scripts/repartidor_datos.gd" id="3_a4fla"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a4fla"]
+font_size = 43
+
+[node name="RedManager" type="Node" unique_id=176088675 node_paths=PackedStringArray("boton_crear_partida", "boton_unirse", "check_steam", "campo_texto", "texto_mi_id")]
+script = ExtResource("1_eirx7")
+boton_crear_partida = NodePath("host")
+boton_unirse = NodePath("client")
+check_steam = NodePath("CheckButton")
+campo_texto = NodePath("LineEdit")
+escena_del_jugador = ExtResource("2_a4fla")
+texto_mi_id = NodePath("Info")
+
+[node name="client" type="Button" parent="." unique_id=1072071838]
+offset_left = 1.0
+offset_top = 251.0
+offset_right = 193.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 67
+text = "client
+"
+
+[node name="host" type="Button" parent="." unique_id=1397943540]
+offset_top = 143.0
+offset_right = 190.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 71
+text = "host"
+
+[node name="Info" type="Label" parent="." unique_id=890505486]
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 279.0
+offset_bottom = 122.0
+text = "ID"
+label_settings = SubResource("LabelSettings_a4fla")
+
+[node name="DatosJugadores" type="Node" parent="." unique_id=1874144782 groups=["repartidor"]]
+script = ExtResource("3_a4fla")
+lugares = Array[Vector2]([Vector2(300, 300), Vector2(500, 300), Vector2(700, 300), Vector2(900, 300)])
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1141032763]
+offset_left = 411.0
+offset_top = 271.0
+offset_right = 940.0
+offset_bottom = 379.0
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1171208378]
+offset_left = 524.0
+offset_top = 169.00002
+offset_right = 631.165
+offset_bottom = 200.00002
+scale = Vector2(2.705, 2.705)
+text = "STEAM"

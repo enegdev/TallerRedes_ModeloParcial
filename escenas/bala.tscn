@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bn7wq3tar4ixd"]
+
+[ext_resource type="Texture2D" uid="uid://bpx810f7hk6t5" path="res://sprites/shot_poulpi.png" id="1_2y4dy"]
+[ext_resource type="Script" uid="uid://usbvnvrt45ov" path="res://scripts/bala.gd" id="1_66u8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66u8n"]
+size = Vector2(138, 120)
+
+[node name="Bala" type="Area2D" unique_id=2029106990]
+script = ExtResource("1_66u8n")
+
+[node name="ShotPoulpi" type="Sprite2D" parent="." unique_id=1213920675]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2y4dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392919315]
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_66u8n")
